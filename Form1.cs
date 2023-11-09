@@ -16,5 +16,14 @@ namespace PadariaForms
         {
             InitializeComponent();
         }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            Login janela = new Login(); //Instanciar a janela de login
+
+            janela.ShowDialog(); //Mostrar a janela
+
+            Application.Exit(); //Fechar tudo ao fechar a janela "login"
+        }
     }
 }
