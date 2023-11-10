@@ -65,6 +65,7 @@
             // 
             // txbSenha
             // 
+            this.txbSenha.BackColor = System.Drawing.SystemColors.Window;
             this.txbSenha.Location = new System.Drawing.Point(102, 100);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '•';
@@ -76,7 +77,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Crimson;
-            this.lblTitulo.Location = new System.Drawing.Point(160, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(156, 24);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(59, 23);
             this.lblTitulo.TabIndex = 4;
@@ -85,13 +86,15 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.LightPink;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(12, 147);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(314, 36);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 

@@ -79,5 +79,15 @@ namespace PadariaForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_button_computer_icons_exit_angle_rectangle_logo_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-button-computer-icons-exit-angle-rectangle-logo-thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
