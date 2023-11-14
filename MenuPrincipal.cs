@@ -12,9 +12,29 @@ namespace PadariaForms
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        //Objetos globais
+        Classes.Usuario usuario = new Classes.Usuario();
+
+        public MenuPrincipal(Classes.Usuario usuario) //Usuario local
         {
             InitializeComponent();
+
+            //Atribuir o usuário local no global
+            this.usuario = usuario;
+
+            lblSaudacao.Text = "Olá, " + usuario.NomeCompleto;
+        }
+
+        private void pibSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            //Instanciar a janela
+            Views.GerenciamentoUsuarios janela = new Views.GerenciamentoUsuarios();
+            janela.Show();
         }
     }
 }

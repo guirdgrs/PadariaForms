@@ -38,9 +38,8 @@ namespace PadariaForms
             { //Senha correta
                 usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
                 usuario.Id = (int)resultado.Rows[0]["id"];
-                MessageBox.Show("Usuário encontrado");
 
-                MenuPrincipal janela = new MenuPrincipal();
+                MenuPrincipal janela = new MenuPrincipal(usuario);
 
                 Hide();
                 janela.ShowDialog(); //Mostrar o menu
