@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,12 +66,87 @@ namespace PadariaForms.Classes
         public bool Cadastrar()
         {
             string comando = "INSERT INTO usuarios (nome_completo, email, senha) " +
-                             "VALUES (@nome_completo, @email, @senha)"; //Comando Insert SQL
+                             "VALUES (@nome_completo, @email, @senha)"; //Comando SQL INSERT
 
             Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
+            cmd.Parameters.AddWithValue("@nome_completo", NomeCompleto);
+            cmd.Parameters.AddWithValue("@email", Email);
+
+            //Obter o hash da senha:
+            var hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+            cmd.Parameters.AddWithValue("@senha", hashsenha);
+
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
+        public bool Apagar()
+        {
+            string comando = "DELETE FROM usuarios WHERE id = @id"; //Comando SQL DELETE
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
+        public bool Editar()
+        {
+            string comando = "UPDATE usuarios SET nome_completo = @nome_completo, email = @email, " +
+                             "senha = @senha WHERE id = @id"; //Comando SQL UPDATE
+
+            if (Senha == "")
+            {
+                comando = "UPDATE usuarios SET nome_completo = @nome_completo, email = @email WHERE id = @id";
+            }
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id", Id);
             cmd.Parameters.AddWithValue("@nome_completo", NomeCompleto);
             cmd.Parameters.AddWithValue("@email", Email);
 

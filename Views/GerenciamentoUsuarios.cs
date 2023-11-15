@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PadariaForms.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,13 +50,8 @@ namespace PadariaForms.Views
                 if (usuario.Cadastrar() == true)
                 {
                     MessageBox.Show("Usuário cadastrado com sucesso!");
-                    //Limpar os campos
-                    txbNomeCad.Clear();
-                    txbEmailCad.Clear();
-                    txbSenhaCad.Clear();
 
-                    //Atualizar o DGV
-                    dgvUsuarios.DataSource = usuario.ListarTudo();
+                    Atualizar();
                 }
                 else
                 {
@@ -67,6 +63,25 @@ namespace PadariaForms.Views
 
         private void pibMostrar_Click(object sender, EventArgs e)
         {
+        }
+
+        public void Atualizar()
+        {
+            Classes.Usuario usuario = new Classes.Usuario();
+
+            dgvUsuarios.DataSource = usuario.ListarTudo();
+
+            txbNomeCad.Clear();
+            txbNomeEdi.Clear();
+            txbEmailCad.Clear();
+            txbEmailEdi.Clear();
+            txbSenhaCad.Clear();
+            txbConfirmarSenhaCad.Clear();
+            txbSenhaEdi.Clear();
+
+            grbApagar.Enabled = false;
+            grbEditar.Enabled = false;
+
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -99,6 +114,53 @@ namespace PadariaForms.Views
             Classes.Usuario usuario = new Classes.Usuario();
 
             usuario.Id = idSelecionado;
+
+           var r = MessageBox.Show("Tem certeza que deseja remover?", "Atenção!", //Janela de confirmação
+                   MessageBoxButtons.YesNo , MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes) //Sim = apagar
+            {
+                if (usuario.Apagar()) //True
+                {
+                    MessageBox.Show("Usuário removido!", "Sucesso" , 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Atualizar();
+
+                    lblApagar.Text = "Selecione um usuário para apagar";
+
+                }
+                else //False
+                {
+                    MessageBox.Show("Erro ao remover usuário", "Falha",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Classes.Usuario usuario = new Classes.Usuario();
+
+            usuario.Id = idSelecionado;
+
+            usuario.NomeCompleto = txbNomeEdi.Text;
+            usuario.Email = txbEmailEdi.Text;
+            usuario.Senha = txbSenhaEdi.Text;
+
+                if (usuario.Editar() == true)
+                {
+                    MessageBox.Show("Usuário editado!" , "Sucesso" ,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Atualizar();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao editar usuário", "Falha",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+           
         }
     }
 }
