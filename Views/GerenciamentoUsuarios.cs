@@ -1,4 +1,4 @@
-﻿using PadariaForms.Classes;
+﻿    using PadariaForms.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,7 +106,6 @@ namespace PadariaForms.Views
 
             //Salvar o id selecionado na var global
             idSelecionado = (int)linha.Cells[0].Value;
-
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -160,7 +159,6 @@ namespace PadariaForms.Views
                     MessageBox.Show("Erro ao editar usuário", "Falha",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-           
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using EasyEncryption;
+﻿    using EasyEncryption;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;

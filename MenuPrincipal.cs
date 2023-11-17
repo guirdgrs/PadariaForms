@@ -36,5 +36,11 @@ namespace PadariaForms
             Views.GerenciamentoUsuarios janela = new Views.GerenciamentoUsuarios();
             janela.Show();
         }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            Views.GerenciamentoProdutos janela = new Views.GerenciamentoProdutos(usuario);
+            janela.Show();
+        }
     }
 }
