@@ -30,10 +30,9 @@ namespace PadariaForms.Classes
 
             DataTable tabela = new DataTable();
 
-
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
-
+            
             return tabela;
         }
 

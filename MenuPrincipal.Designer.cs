@@ -42,11 +42,11 @@
             // lblMenu
             // 
             this.lblMenu.AutoSize = true;
-            this.lblMenu.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenu.ForeColor = System.Drawing.Color.Crimson;
-            this.lblMenu.Location = new System.Drawing.Point(143, 34);
+            this.lblMenu.Location = new System.Drawing.Point(271, 104);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(226, 28);
+            this.lblMenu.Size = new System.Drawing.Size(254, 32);
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "| Menu Principal |";
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,9 +56,9 @@
             this.btnComandas.BackColor = System.Drawing.Color.LightPink;
             this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnComandas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComandas.Location = new System.Drawing.Point(165, 102);
+            this.btnComandas.Location = new System.Drawing.Point(229, 188);
             this.btnComandas.Name = "btnComandas";
-            this.btnComandas.Size = new System.Drawing.Size(179, 31);
+            this.btnComandas.Size = new System.Drawing.Size(344, 31);
             this.btnComandas.TabIndex = 1;
             this.btnComandas.Text = "Comandas";
             this.btnComandas.UseVisualStyleBackColor = false;
@@ -68,9 +68,9 @@
             this.btnProdutos.BackColor = System.Drawing.Color.LightPink;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProdutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProdutos.Location = new System.Drawing.Point(165, 139);
+            this.btnProdutos.Location = new System.Drawing.Point(229, 225);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(179, 34);
+            this.btnProdutos.Size = new System.Drawing.Size(344, 34);
             this.btnProdutos.TabIndex = 2;
             this.btnProdutos.Text = "Produtos";
             this.btnProdutos.UseVisualStyleBackColor = false;
@@ -81,9 +81,9 @@
             this.btnCaixa.BackColor = System.Drawing.Color.LightPink;
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCaixa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.Location = new System.Drawing.Point(165, 179);
+            this.btnCaixa.Location = new System.Drawing.Point(229, 265);
             this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(179, 34);
+            this.btnCaixa.Size = new System.Drawing.Size(344, 34);
             this.btnCaixa.TabIndex = 3;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             this.btnUsuarios.BackColor = System.Drawing.Color.LightPink;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(165, 219);
+            this.btnUsuarios.Location = new System.Drawing.Point(229, 305);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(179, 34);
+            this.btnUsuarios.Size = new System.Drawing.Size(344, 34);
             this.btnUsuarios.TabIndex = 4;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -105,7 +105,7 @@
             // 
             this.lblSaudacao.AutoSize = true;
             this.lblSaudacao.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaudacao.Location = new System.Drawing.Point(144, 73);
+            this.lblSaudacao.Location = new System.Drawing.Point(291, 151);
             this.lblSaudacao.Name = "lblSaudacao";
             this.lblSaudacao.Size = new System.Drawing.Size(0, 21);
             this.lblSaudacao.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             this.pibSair.Image = ((System.Drawing.Image)(resources.GetObject("pibSair.Image")));
             this.pibSair.InitialImage = null;
-            this.pibSair.Location = new System.Drawing.Point(463, 34);
+            this.pibSair.Location = new System.Drawing.Point(737, 34);
             this.pibSair.Name = "pibSair";
             this.pibSair.Size = new System.Drawing.Size(30, 29);
             this.pibSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 284);
+            this.ClientSize = new System.Drawing.Size(821, 481);
             this.Controls.Add(this.pibSair);
             this.Controls.Add(this.lblSaudacao);
             this.Controls.Add(this.btnUsuarios);

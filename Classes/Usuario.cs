@@ -44,6 +44,25 @@ namespace PadariaForms.Classes
             return tabela;
         }
 
+        public DataTable ListarUsuários()
+        {
+            string comando = "SELECT id, nome_completo FROM usuarios";
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Prepare();
+
+            DataTable tabela = new DataTable();
+
+
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+
+            return tabela;
+        }
+
         public DataTable ListarTudo() //Método de listagem (Select)
         { //Praticamente o mesmo código do método de login com leves mudanças
             string comando = "SELECT id, nome_completo, email FROM usuarios";

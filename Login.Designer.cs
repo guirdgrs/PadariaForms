@@ -40,7 +40,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(24, 65);
+            this.lblEmail.Location = new System.Drawing.Point(108, 87);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(59, 19);
             this.lblEmail.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(24, 98);
+            this.lblSenha.Location = new System.Drawing.Point(108, 120);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(58, 19);
             this.lblSenha.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(102, 64);
+            this.txbEmail.Location = new System.Drawing.Point(186, 86);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(182, 20);
             this.txbEmail.TabIndex = 2;
@@ -66,7 +66,7 @@
             // txbSenha
             // 
             this.txbSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txbSenha.Location = new System.Drawing.Point(102, 100);
+            this.txbSenha.Location = new System.Drawing.Point(186, 122);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '•';
             this.txbSenha.Size = new System.Drawing.Size(182, 20);
@@ -77,7 +77,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Crimson;
-            this.lblTitulo.Location = new System.Drawing.Point(156, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(240, 46);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(59, 23);
             this.lblTitulo.TabIndex = 4;
@@ -88,7 +88,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.LightPink;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(12, 147);
+            this.btnLogin.Location = new System.Drawing.Point(96, 169);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(314, 36);
             this.btnLogin.TabIndex = 5;
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(338, 216);
+            this.ClientSize = new System.Drawing.Size(505, 269);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txbSenha);

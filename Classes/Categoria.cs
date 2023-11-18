@@ -1,5 +1,6 @@
 ﻿using MySqlConnector;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace PadariaForms.Classes
 
         public DataTable ListarCategoria() //Método de listagem (SELECT)
         {
-            string comando = "SELECT * FROM categorias";
+            string comando = "SELECT id AS 'Id', nome AS 'Categoria' FROM categorias";
 
             Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -25,11 +26,10 @@ namespace PadariaForms.Classes
 
             DataTable tabela = new DataTable();
 
-
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
 
-            return tabela;
+            return (tabela);
         }
 
         public bool NovaCategoria()
