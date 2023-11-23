@@ -107,7 +107,7 @@
             // 
             this.lblSaudacao.AutoSize = true;
             this.lblSaudacao.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaudacao.Location = new System.Drawing.Point(344, 149);
+            this.lblSaudacao.Location = new System.Drawing.Point(283, 146);
             this.lblSaudacao.Name = "lblSaudacao";
             this.lblSaudacao.Size = new System.Drawing.Size(0, 30);
             this.lblSaudacao.TabIndex = 5;

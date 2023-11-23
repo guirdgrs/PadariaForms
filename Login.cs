@@ -41,12 +41,12 @@ namespace PadariaForms
 
                 MenuPrincipal janela = new MenuPrincipal(usuario);
 
+                txbEmail.Clear();
+                txbSenha.Clear();
+
                 Hide();
                 janela.ShowDialog(); //Mostrar o menu
                 Show(); //Menu fechado tela volta a aparecer
-
-                txbEmail.Clear();
-                txbSenha.Clear();
             }
         }
     }

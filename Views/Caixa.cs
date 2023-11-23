@@ -38,9 +38,23 @@ namespace PadariaForms.Views
                 ordem.IdFicha = int.Parse(txbNumComanda.Text);
                 var r = ordem.BuscarFicha();
 
-                dgvComandas.DataSource = r; //Preenchendo o DGV com o SELECT
+                if (r.Rows.Count > 0) //Verificar se existem itens na comanda
+                {
+                    dgvComandas.DataSource = r; //Preenchendo o DGV com o SELECT
 
-                lblTotal.Text = "Total: R$ " + r.Compute("SUM(Total_Item)", "True").ToString(); //Mostrando o valor total
+                    lblTotal.Text = "Total: R$ " + r.Compute("SUM(Total_Item)", "True").ToString(); //Mostrando o valor total
+                }
+                else
+                {
+                    MessageBox.Show("A comanda não possui itens registrados","Alerta", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvComandas.DataSource = null;
+
+                    txbNumComanda.Clear();
+                    lblTotal.Text = "Total: R$ 0,00";
+                }
+
             }
             else
             {

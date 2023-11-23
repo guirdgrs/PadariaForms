@@ -23,6 +23,12 @@ namespace PadariaForms
             this.usuario = usuario;
 
             lblSaudacao.Text = "Olá, " + usuario.NomeCompleto;
+
+            if (usuario.Id != 1)
+            {
+                btnUsuarios.Enabled = false;
+                btnUsuarios.Visible = false;
+            }
         }
 
         private void pibSair_Click(object sender, EventArgs e)
