@@ -44,6 +44,9 @@ namespace PadariaForms
                 Hide();
                 janela.ShowDialog(); //Mostrar o menu
                 Show(); //Menu fechado tela volta a aparecer
+
+                txbEmail.Clear();
+                txbSenha.Clear();
             }
         }
     }

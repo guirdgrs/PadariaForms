@@ -1,8 +1,12 @@
-﻿using System;
+﻿using EasyEncryption;
+using MySqlConnector;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PadariaForms.Classes
 {
@@ -15,5 +19,93 @@ namespace PadariaForms.Classes
         public int IdResp { get; set; }
         public DateTime DataAdic { get; set; }
         public int Situacao { get; set; }
+
+        public bool NovoLancamento()
+        {
+            string comando = "INSERT INTO ordens_comandas (id_ficha, id_produto, quantidade, id_resp) " +
+                             "VALUES (@id_ficha, @id_produto, @quantidade, @id_resp) ";
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id_ficha", IdFicha);
+            cmd.Parameters.AddWithValue("@id_produto", IdProduto);
+            cmd.Parameters.AddWithValue("@quantidade", Quantidade);
+            cmd.Parameters.AddWithValue("@id_resp", IdResp);
+
+            cmd.Prepare();
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
+
+        public DataTable BuscarFicha()
+        {
+            string comando = "SELECT * FROM view_fichas WHERE Ficha = @ficha";
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@ficha", IdFicha);
+
+            cmd.Prepare();
+
+            DataTable tabela = new DataTable();
+
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+
+            return tabela;
+        }
+
+        public bool AtualizarComanda()
+        {
+            string comando = "UPDATE ordens_comandas SET situacao = 0 " +
+                             "WHERE id_ficha = @id_ficha AND situacao = 1";
+
+            Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id_ficha", IdFicha);
+
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
+        }
     }
 }
